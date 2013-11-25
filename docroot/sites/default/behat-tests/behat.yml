@@ -13,3 +13,8 @@ default:
       drush:
         alias: warmshowers.dev
       api_driver: drush
+      text:
+        log_out: "Log out"
+        log_in: "Log in"
+        password_field: "Password"
+        username_field: "Username or e-mail address"

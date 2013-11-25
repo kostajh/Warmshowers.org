@@ -23,6 +23,15 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     }
 
     /**
+     * @Given /^I log out and log back in$/
+     */
+    public function iLogOutAndLogBackIn()
+    {
+        $this->getSession()->visit($this->locatePath('/logout'));
+        $this->login();
+    }
+
+    /**
      * Take screenshot when step fails.
      * Works only with Selenium2Driver.
      *
@@ -87,10 +96,10 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
         $element = $this->getSession()->getPage();
         // Go to the user page.
         $this->getSession()->visit($this->locatePath('/user'));
-        if ($find = $element->find('css', '#page-title')) {
-          $page_title = $find->getText();
-          if ($page_title) {
-            return $page_title;
+        if ($find = $element->find('css', '.username')) {
+          $username = $find->getText();
+          if ($username) {
+            return $username;
           }
         }
         return FALSE;
