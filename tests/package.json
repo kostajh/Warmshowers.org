@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-casperjs": "~1.4.0"
+    "grunt-casperjs": "~1.4.0",
+    "grunt-shell": "~0.6.1",
+    "grunt-shell-spawn": "~0.3.0"
   }
 }
